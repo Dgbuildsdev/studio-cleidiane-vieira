@@ -1,0 +1,92 @@
+export const PROCEDIMENTOS = [
+  {
+    id: "alongamento-cilios",
+    categoria: "Olhar",
+    label: "Alongamento de Cílios",
+    price: "a partir de R$ 180",
+  },
+  {
+    id: "progressiva",
+    categoria: "Cabelos",
+    label: "Progressiva",
+    price: "a partir de R$ 200",
+  },
+  {
+    id: "selagem",
+    categoria: "Cabelos",
+    label: "Selagem",
+    price: "a partir de R$ 180",
+  },
+  {
+    id: "botox-capilar",
+    categoria: "Cabelos",
+    label: "Botox Capilar",
+    price: "R$ 150",
+  },
+  {
+    id: "tratamento-capilar",
+    categoria: "Cabelos",
+    label: "Tratamento Capilar",
+    price: "a partir de R$ 80",
+  },
+  {
+    id: "manicure-pedicure",
+    categoria: "Beleza",
+    label: "Manicure e Pedicure",
+    price: "R$ 80",
+  },
+  {
+    id: "designer-sobrancelhas",
+    categoria: "Olhar",
+    label: "Designer de Sobrancelhas",
+    price: "R$ 35",
+  },
+  {
+    id: "designer-renna",
+    categoria: "Olhar",
+    label: "Designer de Sobrancelhas com Rena",
+    price: "R$ 60",
+  },
+  {
+    id: "depilacao",
+    categoria: "Beleza",
+    label: "Depilação",
+    price: "a partir de R$ 50",
+  },
+  {
+    id: "mechas",
+    categoria: "Cabelos",
+    label: "Mechas",
+    price: "a partir de R$ 400",
+  },
+  {
+    id: "limpeza-pele",
+    categoria: "Pele",
+    label: "Limpeza de Pele",
+    price: "a partir de R$ 120",
+  },
+  {
+    id: "micropigmentacao",
+    categoria: "Olhar",
+    label: "Micropigmentação",
+    price: "R$ 400",
+  },
+  {
+    id: "micro-labial",
+    categoria: "Pele",
+    label: "Micro Labial",
+    price: "R$ 250",
+  },
+  {
+    id: "morena-iluminada",
+    categoria: "Cabelos",
+    label: "Morena Iluminada",
+    price: "R$ 400",
+  },
+  {
+    id: "escova",
+    categoria: "Cabelos",
+    label: "Escova",
+    price: "a partir de R$ 40",
+  },
+];

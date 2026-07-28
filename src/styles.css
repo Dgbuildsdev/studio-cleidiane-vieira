@@ -1,0 +1,287 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   STUDIO CLEIDIANE VIEIRA
+   Dark Luxury · Editorial · Cinematic
+   ============================================================ */
+
+@theme inline {
+  --font-display: "Cormorant Garamond", "Cormorant", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-obsidian: var(--obsidian);
+  --color-onyx: var(--onyx);
+  --color-graphite: var(--graphite);
+  --color-ivory: var(--ivory);
+  --color-ivory-muted: var(--ivory-muted);
+
+  --color-champagne: var(--champagne);
+  --color-champagne-glow: var(--champagne-glow);
+  --color-gold: var(--gold);
+  --color-bronze: var(--bronze);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Core dark luxury palette */
+  --obsidian: oklch(0.08 0.003 60); /* #050505 */
+  --onyx: oklch(0.11 0.004 60); /* #0B0B0D */
+  --graphite: oklch(0.15 0.005 60); /* #111214 */
+  --ivory: oklch(0.96 0.012 85); /* warm ivory */
+  --ivory-muted: oklch(0.75 0.015 85);
+
+  --champagne: oklch(0.83 0.065 82); /* soft champagne */
+  --champagne-glow: oklch(0.9 0.08 85);
+  --gold: oklch(0.78 0.11 78); /* soft gold */
+  --bronze: oklch(0.55 0.08 55);
+
+  --background: var(--obsidian);
+  --foreground: var(--ivory);
+
+  --card: var(--onyx);
+  --card-foreground: var(--ivory);
+  --popover: var(--onyx);
+  --popover-foreground: var(--ivory);
+
+  --primary: var(--champagne);
+  --primary-foreground: var(--obsidian);
+  --secondary: var(--graphite);
+  --secondary-foreground: var(--ivory);
+  --muted: var(--graphite);
+  --muted-foreground: var(--ivory-muted);
+  --accent: var(--champagne);
+  --accent-foreground: var(--obsidian);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: var(--ivory);
+
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: var(--champagne);
+
+  /* Gradients */
+  --gradient-veil: radial-gradient(
+    ellipse at top,
+    oklch(0.83 0.065 82 / 0.12),
+    transparent 60%
+  );
+  --gradient-gold: linear-gradient(
+    135deg,
+    var(--champagne),
+    var(--gold) 60%,
+    var(--bronze)
+  );
+  --gradient-obsidian: linear-gradient(180deg, var(--obsidian), var(--onyx));
+
+  /* Shadows */
+  --shadow-glow: 0 0 60px -10px oklch(0.83 0.065 82 / 0.35);
+  --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.8);
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-silk: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: oklch(0.83 0.065 82 / 0.3);
+    color: var(--ivory);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--obsidian);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(1 0 0 / 0.06);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.83 0.065 82 / 0.3);
+  }
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+
+@utility text-gold-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-glass {
+  background: oklch(0.11 0.004 60 / 0.5);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 0.06);
+}
+
+@utility hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0.83 0.065 82 / 0.4),
+    transparent
+  );
+  height: 1px;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--champagne);
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+@utility display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+@utility noise-overlay {
+  position: relative;
+}
+
+@utility grain {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+}
+
+/* Reveal masks */
+@utility reveal-mask {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* Marquee loop */
+@keyframes scv-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@utility marquee-track {
+  animation: scv-marquee 45s linear infinite;
+  will-change: transform;
+}
+
+/* Form fields (booking modal) */
+@utility input-field {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid oklch(1 0 0 / 0.08);
+  background: oklch(0.08 0.003 60 / 0.6);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--ivory);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.input-field::placeholder {
+  color: oklch(0.75 0.015 85 / 0.5);
+}
+.input-field:focus {
+  outline: none;
+  border-color: oklch(0.83 0.065 82 / 0.5);
+  background: oklch(0.08 0.003 60 / 0.8);
+}
+.input-field[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7) sepia(0.5) saturate(2) hue-rotate(10deg);
+  cursor: pointer;
+}
+
+/* Cursor (hide default on desktop, keep on touch) */
+@media (hover: hover) and (pointer: fine) {
+  body,
+  button,
+  a {
+    cursor: none;
+  }
+}
