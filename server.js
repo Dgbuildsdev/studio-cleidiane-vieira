@@ -5,7 +5,7 @@ import { readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
-import handler from "./dist/server/assets/server-DwdcutB4.js";
+import handler from "./dist/server/server.js";
 
 
 const port = process.env.PORT || 3000;
