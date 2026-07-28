@@ -1,30 +1,74 @@
+# ==============================
 # Dependencies
+# ==============================
+
 node_modules/
 
+
+# ==============================
 # Environment variables
+# ==============================
+
 .env
 .env.*
 !.env.example
 
-# Build
+
+# ==============================
+# Build output
+# ==============================
+
 dist/
 build/
+.output/
 
-# Cloudflare
-.wrangler/
-.dev.vars
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea/
+# ==============================
+# Nitro
+# ==============================
 
-# OS
-.DS_Store
+.nitro/
 
+
+# ==============================
 # Logs
+# ==============================
+
 *.log
 
-# Nitro
-.output/
+
+# ==============================
+# Temporary files
+# ==============================
+
+*.tmp
+*.temp
+.cache/
+
+
+# ==============================
+# Editor
+# ==============================
+
+.vscode/*
+!.vscode/extensions.json
+
+.idea/
+
+
+# ==============================
+# Operating System
+# ==============================
+
+.DS_Store
+Thumbs.db
+
+
+# ==============================
+# Local backups
+# ==============================
+
+*.old
+*.bak
+
 server.old.js
